@@ -1,0 +1,26 @@
+<h1>Kodierwürfel</h1>
+<body>
+  <div class="container">
+    <label>Bitte geben Sie Ihren Text ein:</label>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <fieldset>
+        <textarea id = "input-text" name="inputText" ngModel required #inputText="ngModel"></textarea>
+      </fieldset>
+      <label>Bitte geben Sie das Lösungswort ein:</label>
+      <fieldset>
+        <input id = "input-word" name="inputWord" ngModel>
+      </fieldset>
+      <button>Kodieren</button>
+    </form>
+  </div>
+  <div class="output">  
+        <label>Ihr verschlüsseltes Text im Kodierwürfel</label>
+        <fieldset>
+          <table>
+            <li *ngFor="let row of columnsText">
+                  <p>{{arrayAsVector}}</p>
+            </li>
+          </table>
+      </fieldset>
+  </div>
+</body>
