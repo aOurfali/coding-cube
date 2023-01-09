@@ -10,17 +10,17 @@
       <fieldset>
         <input id = "input-word" name="inputWord" ngModel>
       </fieldset>
-      <button>Kodieren</button>
+      <button class="btn btn-outline-primary" aria-controls="collapseExample">Kodieren</button>
     </form>
-  </div>
-  <div class="output">  
-        <label>Ihr verschlüsseltes Text im Kodierwürfel</label>
-        <fieldset>
-          <table>
-            <li *ngFor="let row of columnsText">
-                  <p>{{arrayAsVector}}</p>
-            </li>
-          </table>
-      </fieldset>
+    <fieldset>
+      <label>Ihr verschlüsseltes Text im Kodierwürfel</label>
+    </fieldset>
+    <table>
+      <tbody>
+        <tr *ngFor="let outer of output">
+          <td *ngFor="let all of outer">{{all}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
